@@ -13,6 +13,10 @@ Resemble Enhance is an AI-powered tool that aims to improve the overall quality 
 
 ### Installation
 
+### Fix for Cuda
+```bash 
+export LD_LIBRARY_PATH=`python3 -c 'import os; import nvidia.cublas.lib; import nvidia.cudnn.lib; import torch; print(os.path.dirname(nvidia.cublas.lib.__file__) + ":" + os.path.dirname(nvidia.cudnn.lib.__file__) + ":" + os.path.dirname(torch.__file__) +"/lib")'`
+```
 Install the stable version:
 
 ```bash
@@ -24,6 +28,7 @@ Or try the latest pre-release version:
 ```bash
 pip install resemble-enhance --upgrade --pre
 ```
+
 
 ### Enhance
 
